@@ -1,0 +1,255 @@
+:root {
+    --header-height: 48px;
+    --header-bg: #026AA7;
+    --list-width: 272px;
+    --list-bg: #F1F2F4;
+    --card-bg: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    background-color: #f4f5f7;
+}
+
+/* -------- AUTH SCREENS -------- */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg') center/cover no-repeat;
+}
+
+.auth-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-form h3 {
+    font-weight: 600;
+}
+
+.auth-form input {
+    font-size: 14px;
+}
+
+.auth-form a {
+    text-decoration: none;
+    color: #026AA7;
+}
+
+/* -------- HEADER -------- */
+.navbar {
+    height: var(--header-height);
+    background-color: var(--header-bg);
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-header {
+    height: 32px;
+    padding: 0 12px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.btn-header:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.board-title span {
+    font-weight: 600;
+    color: white;
+}
+
+/* Avatar */
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #9333EA, #EC4899);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* Search Bar */
+.search-input {
+    height: 32px;
+    width: 180px;
+    padding-left: 32px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+}
+
+.search-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* -------- BOARD AREA -------- */
+.board {
+    height: calc(100vh - var(--header-height));
+    background: url('https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg') center/cover no-repeat;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.board-wrapper {
+    padding: 1rem;
+    height: 100%;
+}
+
+.list-container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    height: 100%;
+}
+
+/* LISTS */
+.list {
+    width: var(--list-width);
+    background: var(--list-bg);
+    border-radius: 3px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+}
+
+.list-header h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    padding: 4px;
+}
+
+.btn-list-menu {
+    background: none;
+    border: none;
+    color: #6B778C;
+}
+
+/* CARDS */
+.list-cards {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.25rem 0;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(9, 30, 66, 0.25);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: grab;
+}
+
+.card:hover {
+    background-color: #F4F5F7;
+}
+
+.card-labels {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.label {
+    width: 40px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+.bg-purple {
+    background-color: #9333EA;
+}
+
+.bg-primary {
+    background-color: #0d6efd;
+}
+
+.bg-success {
+    background-color: #198754;
+}
+
+.bg-warning {
+    background-color: #ffc107;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    color: #172B4D;
+}
+
+.card-footer {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #6B778C;
+}
+
+/* ADD BUTTONS */
+.btn-add-card,
+.btn-add-list {
+    background: transparent;
+    border: none;
+    color: #6B778C;
+    padding: 0.5rem;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 3px;
+}
+
+.btn-add-card:hover,
+.btn-add-list:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172B4D;
+}
+
+.add-list {
+    width: var(--list-width);
+}
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+    .list-container {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        width: 120px;
+    }
+}
